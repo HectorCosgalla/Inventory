@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <ul>
+        <li><a th:href="@{/products/new}">Add a new product</a></li>
+        <li><a th:href="@{/products/all}">Check all the products</a></li>
+        <li><a th:href="@{/products/delete}">Delete a product</a></li>
+        <li><a th:href="@{/products/update}">Update a product</a></li>
+        <li><a th:href="@{/products/delete-all}">Delete all products! <b>BE CAREFUL</b></a></li>
+    </ul>
+    <h3>Recent products:</h3>
+    <ol>
+        <li th:each=" product : ${products}" th:text="${product.name}">a product</li>
+    </ol>
+</body>
+</html>

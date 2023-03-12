@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a th:href="@{/}">Home</a>
+    <form action="#"
+         th:action="@{/products/new}"
+         th:object="${product}"
+         method="post">
+        <h1>Add a new movie bitch</h1>
+        <div>
+            <label for="new-product-name">Name:</label>
+            <input id="new-product-name" type="text" th:field="*{name}" placeholder="Product name">
+        </div>
+        <div>
+            <label for="new-product-description">Description:</label>
+            <input id="new-product-description" type="text" th:field="*{description}" placeholder="Product description">
+        </div>
+        <div>
+            <label for="new-product-stock">Stock:</label>
+            <input id="new-product-stock" type="number" th:field="*{stock}" placeholder="Product stock">
+        </div>
+        <div>
+            <label for="new-product-price">Price:</label>
+            <input id="new-product-price" type="number" th:field="*{price}" placeholder="Product price">
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

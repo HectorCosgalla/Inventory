@@ -1,13 +1,13 @@
-package com.valcos98.inventory;
+package com.valcos98.inventoryjava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InventoryApplication {
+public class InventoryjavaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InventoryApplication.class, args);
+		SpringApplication.run(InventoryjavaApplication.class, args);
 	}
 
 }
