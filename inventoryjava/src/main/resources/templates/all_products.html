@@ -7,14 +7,8 @@
     <title>Products</title>
 </head>
 <body>
-    <ul>
-        <li><a th:href="@{/products/new}">Add a new product</a></li>
-        <li><a th:href="@{/products/all}">Check all the products</a></li>
-        <li><a th:href="@{/products/delete}">Delete a product</a></li>
-        <li><a th:href="@{/products/update}">Update a product</a></li>
-        <li><a th:href="@{/products/delete-all}">Delete all products! <b>BE CAREFUL</b></a></li>
-    </ul>
-    <h3>Recent products:</h3>
+    <a th:href="@{/}">Home</a>
+    <h3>Products stored:</h3>
     <ol>
         <li th:each=" product : ${products}"><a th:href="@{'/product/'+${product.productId}}" th:text="${product.name}">a product</a></li>
     </ol>
