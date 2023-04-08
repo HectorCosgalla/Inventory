@@ -62,4 +62,37 @@ public class ProductsViewController {
         model.addAttribute("products", productsList);
         return "all_products";
     }
+
+    @GetMapping("/products/{id}/delete")
+    public String delleteAProduct(@PathVariable Long id){
+        Optional<Products> optionalProducts = productsServices.getById(id);
+        if (optionalProducts.isPresent()) {
+            Products product = optionalProducts.get();
+            productsServices.deleteProduct(product);
+        }
+        return "redirect:/";
+    }
+
+    @GetMapping("/product/{id}/update")
+    public String gettingEditPage(@PathVariable Long id, Model model) {
+        Optional<Products> optionalProduct = productsServices.getById(id);
+        if (optionalProduct.isPresent()) {
+            Products product = optionalProduct.get();
+            model.addAttribute("Product", product);
+        }
+        return "update_product";
+    }
+
+    @PostMapping("/products/{id}")
+    public String updateProduct(@PathVariable Long id, Products product){
+        Optional<Products> optionalProducts = productsServices.getById(id);
+        if (optionalProducts.isPresent()) {
+            Products existingProduct = optionalProducts.get();
+            existingProduct.setName(product.getName());
+            existingProduct.setDescription(product.getDescription());
+            existingProduct.setPrice(product.getPrice());
+            existingProduct.setStock(product.getStock());
+        }
+        return "redirect:/product/"+id;
+    }
 }

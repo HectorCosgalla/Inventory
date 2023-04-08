@@ -27,4 +27,8 @@ public class ProductsServices {
     public List<Products> getAll(){
         return productsRepository.findAll();
     }
+
+    public void deleteProduct(Products product){
+        productsRepository.delete(product);
+    }
 }

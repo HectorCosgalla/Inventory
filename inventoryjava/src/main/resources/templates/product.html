@@ -12,5 +12,7 @@
     <p th:text="${product.description}">Description</p>
     <p th:text="'$' + ${product.price}">Price</p>
     <p th:text="${product.stock}">Stock</p>
+    <a th:href="@{'/products/'+${product.productId}+'/delete'}">Delete</a><br>
+    <a th:href="@{'/product/'+${product.productId}+'/update'}">Edit</a>
 </body>
 </html>

@@ -10,7 +10,11 @@
     <a th:href="@{/}">Home</a>
     <h3>Products stored:</h3>
     <ol>
-        <li th:each=" product : ${products}"><a th:href="@{'/product/'+${product.productId}}" th:text="${product.name}">a product</a></li>
+        <li th:each=" product : ${products}">
+            <a th:href="@{'/product/'+${product.productId}}" th:text="${product.name}">a product</a> 
+            <a th:href="@{'/product/'+${product.productId}+'/delete'}">Delete</a> 
+            <a th:href="@{'/product/'+${product.productId}+'/update'}">Edit</a>
+        </li>
     </ol>
 </body>
 </html>
